@@ -44,15 +44,15 @@
                   <div class="accordion-message">
                   <div class="table-section">
                       <p class="title-format" >Account Type</p>
-                      <p>Current</p>
+                      <p>{{acctype}}</p>
                       <p class="title-format" >Bank Name</p>
-                      <p>SBM Bank (Marutius) LTD</p>
+                      <p>{{bname}}</p>
                   </div>
                   <div class="table-section">
                     <p class="title-format" >Name as per Bank Account</p>
-                    <p>LCV Trade Finance Fund</p>
+                    <p>{{accname}}</p>
                     <p class="title-format">Account Number</p>
-                    <p>500105659541525</p>
+                    <p>{{accnumber}}</p>
                   </div>
                   </div>
                      <p class="title-format" >To change your bank account details, contact <a href="">ir@siamvalidus.co.th </a> </p>
@@ -74,6 +74,7 @@
 
 <script>
 export default {
+  props: ['acctype', 'accnumber','bname','accname'],
   name: 'TabComp',
   data () {
     return {

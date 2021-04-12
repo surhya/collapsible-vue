@@ -2,9 +2,9 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <!-- <HelloWorld/> -->
-        <TabComp/>
- 
- 
+        <TabComp :acctype="bank.acctype" :accnumber="bank.accnumber" :bname="bank.bname" :accname="bank.accname"/>
+        
+
   </div>
 </template>
 
@@ -17,7 +17,18 @@ export default {
   components: {
    // HelloWorld,
     TabComp
-  }
+  },
+ data() {
+   return {
+      bank: {
+        acctype: 'Current',
+        accnumber : 5001010956478,
+        bname : 'SBM Bank (Marutius) LTD',
+        accname: 'LCV Trade Finance Fund'
+      }
+   }
+ }
+
 }
 </script>
 
