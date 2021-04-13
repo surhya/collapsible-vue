@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <!-- <HelloWorld/> -->
-        <TabComp :acctype="bank.acctype" :accnumber="bank.accnumber" :bname="bank.bname" :accname="bank.accname"/>
+        <TabComp :acctype="bank.acctype" :accnumber="bank.accnumber" :bname="bank.bname" :accname="bank.accname" :uname="uploadDoc.uname" :utype="uploadDoc.utype" :udate="uploadDoc.udate"/>
         
 
   </div>
@@ -25,6 +25,12 @@ export default {
         accnumber : 5001010956478,
         bname : 'SBM Bank (Marutius) LTD',
         accname: 'LCV Trade Finance Fund'
+      },
+       uploadDoc: {
+        uname: 'resume.pdf',
+        utype : 'Photos of ID',
+        udate : '12/04/2021',
+       
       }
    }
  }

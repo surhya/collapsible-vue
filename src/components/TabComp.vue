@@ -1,27 +1,28 @@
 <template>
   <div class="hello">
-    
+
     <div class="outer-card">
 
     <input type="radio" name="tabs" id="tab1" checked />
     <label for="tab1">Personal</label>
-   
+
     <input type="radio" name="tabs" id="tab2" />
     <label for="tab2">Bank Details</label>
-   
+
     <input type="radio" name="tabs" id="tab3" />
     <label for="tab3">Documents</label>
-   
+
 
 
     <div class="tab content1">
-      
+
     Tab1 Content
 
     </div>
-    
+
+    <!-- Tab BankDetails Content: Begins -->
     <div class="tab content2">
-        <div class="tab-title">
+      <div class="tab-title">
         <p>{{msg}}</p>
         </div>
 
@@ -29,7 +30,7 @@
             <section class="accordion" >
               <article class="message" :class="accordionClasses">
                 <!-- <input type="checkbox" name="collapse" id="handle1" > -->
-                
+
                 <div class="accordion-header" @click="toggleAccordion">
                   <div>
                    <label for="handle1">Blue-Sea Marine Services</label>
@@ -39,7 +40,7 @@
                       <p><a id="angle-icon" class="ti-angle-down"></a></p>
                    </div>
                 </div>
-              
+
                 <div class="accordion-outer">
                   <div class="accordion-message">
                   <div class="table-section">
@@ -57,24 +58,94 @@
                   </div>
                      <p class="title-format" >To change your bank account details, contact <a href="">ir@siamvalidus.co.th </a> </p>
                   </div>
-             
+
                  </article>
             </section>
         </div>
 
     </div>
+    <!-- Tab BankDetails Content: Ends -->
 
-    <div class="tab content3">Tab3 Contents</div>
- 
+    <!-- Tab Documents Content: Begins -->
+    <div class="tab content3">
+      <table>
+        <caption>Uploaded Documents</caption>
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Upload Date</th>
+            <th scope="col"></th>
+           
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Name">{{uname}}</td>
+            <td data-label="Type">{{utype}}</td>
+            <td data-label="Upload Date">{{udate}}</td>
+             
+              <td class="dropdown">
+                <p><a id="" class="ti-more-alt"></a></p>
+               <div class="dropdown-content">
+                  <a href="#">View</a>
+                  <a href="#">Download</a>
+                  <a href="#">Print</a>
+                </div>
+              </td>
+               
+          </tr>
+          
+          <tr>
+             <td data-label="Name">{{uname}}</td>
+            <td data-label="Type">{{utype}}</td>
+            <td data-label="Upload Date">{{udate}}</td>
+              <td class="dropdown">
+                <p><a id="" class="ti-more-alt"></a></p>
+               <div class="dropdown-content">
+                  <a href="#">View</a>
+                  <a href="#">Download</a>
+                  <a href="#">Print</a>
+                </div>
+              </td>
+          </tr>
+          <tr>
+             <td data-label="Name">{{uname}}</td>
+            <td data-label="Type">{{utype}}</td>
+            <td data-label="Upload Date">{{udate}}</td>
+            <td class="dropdown">
+                <p><a id="" class="ti-more-alt"></a></p>
+               <div class="dropdown-content">
+                  <a href="#">View</a>
+                  <a href="#">Download</a>
+                  <a href="#">Print</a>
+                </div>
+              </td>
+          </tr>
+          <!-- <tr>
+            <td scope="row" data-label=""></td>
+            <td data-label=""></td>
+            <td data-label=""></td>
+            
+          </tr> -->
+        </tbody>
+      </table>
+     
+    </div>
+    <!-- Tab Documents Content: Ends -->
+
 </div>
-   
-    
+
+
   </div>
 </template>
 
 <script>
+
+
 export default {
-  props: ['acctype', 'accnumber','bname','accname'],
+  props: ['acctype', 'accnumber','bname','accname','uname','utype','udate'],
   name: 'TabComp',
   data () {
     return {
@@ -82,7 +153,11 @@ export default {
       isOpen: false
     }
   },
-  
+  components: {
+
+  },
+
+
   methods: {
     toggleAccordion: function() {
       this.isOpen = !this.isOpen;
@@ -92,7 +167,7 @@ export default {
     accordionClasses: function() {
       return {
         'is-closed': !this.isOpen,
-      
+
       };
     }
   }
@@ -114,7 +189,7 @@ h3 {
 
 .outer-card {
     padding: 5px;
-   
+
 }
 
 .accordion-header{
@@ -122,7 +197,7 @@ h3 {
   padding: 5px;
   cursor: pointer;
   display: flex;
- 
+
 }
 
 .icon-header{
@@ -147,17 +222,17 @@ h3 {
     background-color: white;
     display: flex;
     position: relative;
-  
+
   }
 
  .table-section{
-  
+
   flex-basis: 50%;
-     
+
  }
 
  .table-float {
-   
+
    float: left;
  }
 
@@ -182,7 +257,7 @@ h3 {
 
 
   input + label {             /* box with rounded corner */
-   
+
     background: white;
     padding: 4px ;
     border-radius: 4px 4px 0 0;
@@ -192,12 +267,12 @@ h3 {
   input:checked + label {     /* white background for selected tab */
     background: white;
     color: #d90000;
-   
+
     border-bottom: 4px solid #d90000;
   }
 
    input ~ .tab {         /*  grey line between tab and contents  */
-    
+
     padding: 12px;
   }
 
@@ -209,7 +284,7 @@ h3 {
     padding-bottom: 0px;
     padding-top: 0px;
     background-color: #fafafa;
-   
+
   }
 
  .tab-title {
@@ -227,6 +302,136 @@ h3 {
    font-weight: bold;
  }
 
+ /* Documents CSS */
+ table {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* border-collapse: collapse; */
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  table-layout: fixed;
+}
 
+table caption {
+  font-size: 15px;
+  padding: 10px;
+  text-align: left;
+
+}
+
+table tr {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+table th {
+  font-size: 15px;
+
+  text-transform: uppercase;
+}
+
+.action-bt{ 
+  
+ cursor: pointer;
  
+  
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+ 
+}
+
+.dropdown-content {
+  
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+    width: 100%
+  }
+
+  table caption {
+    font-size: 15px;
+  }
+
+  table thead {
+    border: none;
+    /* clip: rect(0 0 0 0); */
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    /* margin-bottom: .625em; */
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 13px;
+    text-align: right;
+  }
+
+  table td::before {
+    
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+.action-bt{ 
+   padding: 0;
+   
+ 
+}
+
+}
+
+
+
 </style>
