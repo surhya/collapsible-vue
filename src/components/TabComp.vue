@@ -68,70 +68,73 @@
 
     <!-- Tab Documents Content: Begins -->
     <div class="tab content3">
-      <table>
-        <caption>Uploaded Documents</caption>
+       <table>
           <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Type</th>
-            <th scope="col">Upload Date</th>
-            <th scope="col"></th>
-           
+          <tr class="tr-border">
+            <th>Name</th>
+            <th>Type</th>
+            <th>UploadDate</th>
 
           </tr>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
           <tr>
-            <td data-label="Name">{{uname}}</td>
-            <td data-label="Type">{{utype}}</td>
-            <td data-label="Upload Date">{{udate}}</td>
-             
-              <td class="dropdown">
-                <p><a id="" class="ti-more-alt"></a></p>
-               <div class="dropdown-content">
-                  <a href="#">View</a>
-                  <a href="#">Download</a>
-                  <a href="#">Print</a>
+
+            <td>{{uname}}</td>
+            <td>{{utype}}</td>
+            <td>{{udate}}</td>
+
+             <th>
+              <div class="dropdown">
+                <a id="dropbtn" class="ti-more-alt"></a>
+                <!-- <button class="dropbtn">Dropdown</button> -->
+                <div class="dropdown-content">
+                <a href="#">View</a>
+                <a href="#">Download</a>
+                <a href="#">Print</a>
                 </div>
-              </td>
-               
-          </tr>
-          
-          <tr>
-             <td data-label="Name">{{uname}}</td>
-            <td data-label="Type">{{utype}}</td>
-            <td data-label="Upload Date">{{udate}}</td>
-              <td class="dropdown">
-                <p><a id="" class="ti-more-alt"></a></p>
-               <div class="dropdown-content">
-                  <a href="#">View</a>
-                  <a href="#">Download</a>
-                  <a href="#">Print</a>
-                </div>
-              </td>
+              </div>
+            </th>
           </tr>
           <tr>
-             <td data-label="Name">{{uname}}</td>
-            <td data-label="Type">{{utype}}</td>
-            <td data-label="Upload Date">{{udate}}</td>
-            <td class="dropdown">
-                <p><a id="" class="ti-more-alt"></a></p>
-               <div class="dropdown-content">
-                  <a href="#">View</a>
-                  <a href="#">Download</a>
-                  <a href="#">Print</a>
+
+            <td>{{uname}}</td>
+            <td>{{utype}}</td>
+            <td>{{udate}}</td>
+
+            <th>
+              <div class="dropdown">
+                <a id="dropbtn" class="ti-more-alt"></a>
+                <!-- <button class="dropbtn">Dropdown</button> -->
+                <div class="dropdown-content">
+                <a href="#">View</a>
+                <a href="#">Download</a>
+                <a href="#">Print</a>
                 </div>
-              </td>
+              </div>
+            </th>
           </tr>
-          <!-- <tr>
-            <td scope="row" data-label=""></td>
-            <td data-label=""></td>
-            <td data-label=""></td>
-            
-          </tr> -->
-        </tbody>
-      </table>
-     
+          <tr>
+
+            <td>{{uname}}</td>
+            <td>{{utype}}</td>
+            <td>{{udate}}</td>
+
+            <th>
+             <div class="dropdown">
+                <a id="dropbtn" class="ti-more-alt"></a>
+                <!-- <button class="dropbtn">Dropdown</button> -->
+                <div class="dropdown-content">
+                <a href="#">View</a>
+                <a href="#">Download</a>
+                <a href="#">Print</a>
+                </div>
+              </div>
+            </th>
+          </tr>
+          </tbody>
+        </table>
+
     </div>
     <!-- Tab Documents Content: Ends -->
 
@@ -302,65 +305,55 @@ h3 {
    font-weight: bold;
  }
 
+
  /* Documents CSS */
- table {
-  border: 1px solid #ccc;
-  border-radius: 5px;
+table{
+  font-family: sans-serif;
   /* border-collapse: collapse; */
-  margin: 0;
-  padding: 0;
-  width: 50%;
-  table-layout: fixed;
-}
-
-table caption {
-  font-size: 15px;
-  padding: 10px;
-  text-align: left;
+  border: 2px solid #ccc;
+  border-radius: 5px;
 
 }
-
-table tr {
+th{
   background-color: white;
-  border: 1px solid #ddd;
-  padding: 10px;
+  /* color: black; */
+  padding: 25px;
+  font-size: 14px;
+
 }
 
-table th,
-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  
+ td{
+  padding: 25px;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+
 }
 
-table th {
-  font-size: 15px;
-
-  text-transform: uppercase;
+tbody{
+  background-color: white;
+  color: #555;
 }
 
-.action-bt{ 
+#dropbtn {
   
- cursor: pointer;
- 
-  
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
- 
 }
 
 .dropdown-content {
-  
   display: none;
   position: absolute;
-  background-color: white;
+  background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  text-align: left;
 }
 
 .dropdown-content a {
@@ -370,68 +363,73 @@ table th {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: #f1f1f1}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 
+@media screen and (max-width: 600px){
 
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
-    width: 100%
+ 
+  table{
+    width: 100%;
+
   }
 
-  table caption {
-    font-size: 15px;
+  thead{
+    display: none;
   }
 
-  table thead {
-    border: none;
-    /* clip: rect(0 0 0 0); */
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  table th{
+     padding: 15px;
+     font-size: 14px;
+    /* border-bottom: 1px solid black; */
   }
 
-  table tr {
-    border-bottom: 1px solid #ddd;
+  table td{
+    padding: 15px;
+    font-size: 14px;
+     border: none;
+
+ }
+
+  td{
     display: block;
-    /* margin-bottom: .625em; */
-  }
-
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: 13px;
     text-align: right;
   }
 
-  table td::before {
-    
-    content: attr(data-label);
+  /* td:first-child{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+
+
+  } */
+
+   td:first-child::before{
+    content: "Name:";
+
+
+  }
+
+  td:nth-child(2)::before{
+    content: "Type:";
+  }
+
+  td:nth-child(3)::before{
+    content: "Upload Date:";
+  }
+
+
+  td::before{
     float: left;
+    margin-right: 20px;
     font-weight: bold;
-    text-transform: uppercase;
   }
-
-  table td:last-child {
-    border-bottom: 0;
-  }
-
-.action-bt{ 
-   padding: 0;
-   
- 
 }
-
-}
-
 
 
 </style>
